@@ -82,7 +82,7 @@ public class OpenAIService {    private static final Logger logger = LoggerFacto
                 "Contexte RGPD pertinent : \n" + ragContext + "\n\n" +
                 "Voici le texte à analyser : \n" + text;        
                 logger.info("Sending request to OpenAI API with prompt: {}", prompt);        Map<String, Object> requestBody = new HashMap<>();
-                requestBody.put("model", "deepseek/deepseek-r1-zero:free");
+                requestBody.put("model", "deepseek/deepseek-r1:free");
                 requestBody.put("messages", List.of(Map.of("role", "user", "content", prompt)));
                 requestBody.put("temperature", 0.7);
                 requestBody.put("max_tokens", 2000);
@@ -141,7 +141,7 @@ public class OpenAIService {    private static final Logger logger = LoggerFacto
                 "[RAISONS:] (liste concise des raisons, en indiquant 'non' pour les points non conformes a RGPD et 'oui' pour les points conformes )\n\n" +
                 "Contexte RGPD : \n" + ragContext + "\n\n" +
                 "Texte à analyser :\n" + text;        Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("model", "deepseek/deepseek-r1-zero:free");
+        requestBody.put("model", "deepseek/deepseek-r1:free");
         requestBody.put("messages", List.of(Map.of("role", "user", "content", prompt)));
         requestBody.put("temperature", 0.2);
         requestBody.put("max_tokens", 2000);
